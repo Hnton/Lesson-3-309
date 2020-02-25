@@ -13,6 +13,22 @@ fn main() {
              .collect())
         .collect();
 
+    let array_clone = arr.clone();
+    println!("{:?}", array_clone);
 
-    println!("{:?}", arr);
+    let resource = array_clone[0].len();
+    //RESOURCE CLONE
+    let _resource_clone = resource.clone();
+
+    println!("Resources: {}", _resource_clone);
+
+    let processes = (array_clone.len() - 1)/2;
+    
+    let processes_clone = processes.clone();
+
+    println!("Processes: {}", processes_clone);
+
+
+
+
 }
