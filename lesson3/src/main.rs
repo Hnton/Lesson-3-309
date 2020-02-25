@@ -23,10 +23,16 @@ fn main() {
     println!("Resources: {}", _resource_clone);
 
     let processes = (array_clone.len() - 1)/2;
-    
+    //PROCESS CLONE
     let processes_clone = processes.clone();
 
     println!("Processes: {}", processes_clone);
+
+    let available = &array_clone[0];
+    // AVAILABLE CLONE
+    let available_clone = available.clone();
+
+    println!("Available: {:?}", available_clone);
 
 
 
