@@ -9,5 +9,5 @@ fn main() {
 
     let contents = fs::read_to_string(filename).expect("Error reading file");
 
-    println!("Text:\n{}", contents);
+    println!("Inputs:\n{}", contents);
 }
