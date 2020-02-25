@@ -1,13 +1,18 @@
-use std::env;
-use std::fs;
+use std::fs::File;
+use std::io::{BufRead, BufReader};
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let mut f = BufReader::new(File::open("input1.txt").unwrap());
 
-    let filename = &args[1];
-    println!("File: {}", filename);
+    let mut s = String::new();
+    f.read_line(&mut s).unwrap();
 
-    let contents = fs::read_to_string(filename).expect("Error reading file");
+    let arr: Vec<Vec<i32>> = f.lines()
+        .map(|l| l.unwrap().split(char::is_whitespace)
+             .map(|number| number.parse().unwrap())
+             .collect())
+        .collect();
 
-    println!("Inputs:\n{}", contents);
+
+    println!("{:?}", arr);
 }
