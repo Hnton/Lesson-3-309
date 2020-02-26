@@ -4,7 +4,7 @@ use std::convert::TryInto;
 
 fn main() {
     // CHANGE TO INPUT1, INPUT2 or INPUT 3
-    let mut f = BufReader::new(File::open("input2.txt").unwrap());
+    let mut f = BufReader::new(File::open("input3.txt").unwrap());
     let mut s = String::new();
 
     // Reads the file and puts each line into its own vector inside of a vector
@@ -114,7 +114,7 @@ fn main() {
 
                         let inc = i + 1;
                         run.push(inc.try_into().unwrap());
-                        println!("run index {:?}",run );
+                        // println!("run index {:?}",run );
 
                         for j in 0.._resource_number_clone
                         {
