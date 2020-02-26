@@ -85,7 +85,7 @@ fn main() {
                 {
                     // println!("Index:{} Available:{:?}",j, available_clone[j]);
                     // println!("Index:{} Max:{:?}", i,_max_clone[i][j] );
-                    if _max_clone[i][j] + _resources_clone[i][j] > available_clone[j]
+                    if _max_clone[i][j] - _resources_clone[i][j] > available_clone[j]
                     {
                         println!("{:?}", available_clone);
 
@@ -105,7 +105,6 @@ fn main() {
                         {
                             available_clone[j] = available_clone[j] + _resources_clone[i][j]; 
 
-                            _resources_clone.retain(|&x| *x = )
 
                             
                         }
