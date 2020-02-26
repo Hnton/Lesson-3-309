@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let mut f = BufReader::new(File::open("input3.txt").unwrap());
+    let mut f = BufReader::new(File::open("input1.txt").unwrap());
 
     let mut s = String::new();
     f.read_line(&mut s).unwrap();
@@ -44,7 +44,7 @@ fn main() {
         .collect();
 
     // RESOURCE CLONE
-    let _resources_clone = _resources.clone();
+    let mut _resources_clone = _resources.clone();
 
     println!("Resource: {:?}", _resources_clone);
 
@@ -61,59 +61,64 @@ fn main() {
 
 
 
-    // println!("{:?}", _max_clone[2][3] - _resources_clone[2][3]);
-    // let need = _max_clone[2][3] - _resources_clone[2][3];
+    println!("{:?}", _max_clone[2][3] - _resources_clone[2][3]);
+    let need = _max_clone[2][3] - _resources_clone[2][3];
    
-    // println!("{:?}", need);
+    println!("{:?}", need);
 
-    // let mut count = processes_clone;
+    let mut count = processes_clone;
 
-    // let mut running = 0;
+    let mut running = 0;
 
-
-    // while count >=0 
-    // {
-        // println!("process Clone: {}", processes_clone);
+    while count !=0 
+    {
+        println!("process Clone: {}", processes_clone);
         // println!("count: {}", count);
+        for i in 0..processes_clone
+        {
 
-    //     for i in 0..processes_clone
-    //     {
-    //         if resource_number >= running
-    //         {
-    //             let mut exec = true;
-    //             for j in 0.._resource_number_clone 
-    //             {
-    //                 // println!("Index:{} Available:{:?}",j, available_clone[j]);
-    //                 // println!("Index:{} Max:{:?}", i,_max_clone[i][j] );
-    //                 if _max_clone[i][j] - _resources_clone[i][j] > available_clone[j]
-    //                 {
+            if resource_number >= running
+            {
+
+                let mut exec = true;
+                for j in 0.._resource_number_clone 
+                {
+                    // println!("Index:{} Available:{:?}",j, available_clone[j]);
+                    // println!("Index:{} Max:{:?}", i,_max_clone[i][j] );
+                    if _max_clone[i][j] + _resources_clone[i][j] > available_clone[j]
+                    {
+                        println!("{:?}", available_clone);
+
+                        println!("Process {} NOT running", i +1);
+                        exec = false;
+
+                        running = running + 1;
+                        break;
                         
-    //                     exec = false;
-    //                     println!("NO");
-                      
+                    }
 
-    //                     running = running + 1;
-    //                     break;
+                    if exec == true
+                    {
+                        println!("Process {} is Running", i +1);
+
+                        for j in 0.._resource_number_clone
+                        {
+                            available_clone[j] = available_clone[j] + _resources_clone[i][j]; 
+
+                            _resources_clone.retain(|&x| *x = )
+
+                            
+                        }
+                        println!("{:?}", available_clone);
                         
-    //                 }
+                        count = count - 1; 
+                        break;
+                    }
+                }
 
-    //                 if exec == true
-    //                 {
-    //                     println!("Process {} is Running", i +1);
-
-    //                     for j in 0.._resource_number_clone
-    //                     {
-    //                         available_clone[j] = available_clone[j] + _resources_clone[i][j]; 
-    //                     }
-    //                     break;
-    //                 }
-    //             }
-
-    //         } 
-    //     }
-
-    //     count = count - 1;
-    // }
+            } 
+        }
+    }
 
 
 
