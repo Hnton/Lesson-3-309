@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let mut f = BufReader::new(File::open("input1.txt").unwrap());
+    let mut f = BufReader::new(File::open("input3.txt").unwrap());
 
     let mut s = String::new();
     f.read_line(&mut s).unwrap();
@@ -61,10 +61,7 @@ fn main() {
 
 
 
-    println!("{:?}", _max_clone[2][3] - _resources_clone[2][3]);
-    let need = _max_clone[2][3] - _resources_clone[2][3];
-   
-    println!("{:?}", need);
+    
 
     let mut count = processes_clone;
 
@@ -72,7 +69,6 @@ fn main() {
 
     while count !=0 
     {
-        println!("process Clone: {}", processes_clone);
         // println!("count: {}", count);
         for i in 0..processes_clone
         {
@@ -108,7 +104,7 @@ fn main() {
 
                             
                         }
-                        println!("{:?}", available_clone);
+                        println!("Available: {:?}", available_clone);
                         
                         count = count - 1; 
                         break;
