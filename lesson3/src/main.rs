@@ -4,7 +4,7 @@ use std::convert::TryInto;
 
 fn main() {
     // CHANGE TO INPUT1, INPUT2 or INPUT 3
-    let mut f = BufReader::new(File::open("input3.txt").unwrap());
+    let mut f = BufReader::new(File::open("input1.txt").unwrap());
     let mut s = String::new();
 
     // Reads the file and puts each line into its own vector inside of a vector
