@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let mut f = BufReader::new(File::open("input2.txt").unwrap());
+    let mut f = BufReader::new(File::open("input3.txt").unwrap());
 
     let mut s = String::new();
     f.read_line(&mut s).unwrap();
@@ -34,9 +34,9 @@ fn main() {
 
     let available = &array_clone[0];
     // AVAILABLE CLONE
-    let available_clone = available.clone();
+    let mut available_clone = available.clone();
 
-    println!("Available:  {:?}", available_clone);
+    println!("Available: {:?}", available_clone);
 
     let _resources: Vec<Vec<i32>> = array_clone[1..processes_clone + 1]
         .iter()
@@ -46,7 +46,7 @@ fn main() {
     // RESOURCE CLONE
     let _resources_clone = _resources.clone();
 
-    println!("Resources: {:?}", _resources_clone);
+    println!("Resource: {:?}", _resources_clone);
 
     let _max: Vec<Vec<i32>> = array_clone[processes_clone + 1..array_clone.len()]
         .iter()
@@ -56,7 +56,66 @@ fn main() {
     //MAX CLONE
     let _max_clone = _max.clone();
 
-    println!("Max:       {:?}", _max);
+    println!("Max Res:  {:?}", _max);
+
+
+
+
+    // println!("{:?}", _max_clone[2][3] - _resources_clone[2][3]);
+    // let need = _max_clone[2][3] - _resources_clone[2][3];
+   
+    // println!("{:?}", need);
+
+    // let mut count = processes_clone;
+
+    // let mut running = 0;
+
+
+    // while count >=0 
+    // {
+        // println!("process Clone: {}", processes_clone);
+        // println!("count: {}", count);
+
+    //     for i in 0..processes_clone
+    //     {
+    //         if resource_number >= running
+    //         {
+    //             let mut exec = true;
+    //             for j in 0.._resource_number_clone 
+    //             {
+    //                 // println!("Index:{} Available:{:?}",j, available_clone[j]);
+    //                 // println!("Index:{} Max:{:?}", i,_max_clone[i][j] );
+    //                 if _max_clone[i][j] - _resources_clone[i][j] > available_clone[j]
+    //                 {
+                        
+    //                     exec = false;
+    //                     println!("NO");
+                      
+
+    //                     running = running + 1;
+    //                     break;
+                        
+    //                 }
+
+    //                 if exec == true
+    //                 {
+    //                     println!("Process {} is Running", i +1);
+
+    //                     for j in 0.._resource_number_clone
+    //                     {
+    //                         available_clone[j] = available_clone[j] + _resources_clone[i][j]; 
+    //                     }
+    //                     break;
+    //                 }
+    //             }
+
+    //         } 
+    //     }
+
+    //     count = count - 1;
+    // }
+
+
 
     //Creating the Allocation Needed
     /* let _allocation = &array_clone[0];
